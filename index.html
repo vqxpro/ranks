@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hubungi via WhatsApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    .contactContainer {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      margin: 20px auto; 
+      text-align: center;
+    }
+    .profilePicContainer {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px; 
+      background: url('konrok.jpeg') center/cover; 
+      overflow: hidden; 
+    }
+    .profilePic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+    }
+    .formTitle {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block; 
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      display: block; 
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #4CAF50; 
+      color: white;
+      border-radius: 20px; 
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+
+<audio autoplay>
+  <source src="Adelia have fun.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="contactContainer">
+  <div class="profilePicContainer">
+    <img class="profilePic" src="OIG.jpeg" alt="Foto Profil">
+  </div>
+  <div class="formTitle">PLIXNETWORK</div>
+  <form class="contactForm">
+    <label for="gemertag">isi gemertag mu</label>
+    <input type="text" id="gemertag" name="gemertag">
+  </form>
+</div>
+
+  <div class="contactContainer">
+    <div class="profilePicContainer">
+      <img class="profilePic" src="konrok.jpeg" alt="Foto Profil">
+    </div>
+    <div class="formTitle">RANKS</div>
+    <label for="gemertag">pilih ranks</label>
+      <button type="button" onclick="hubungiViaWhatsApp('pesan1')">Forest 10k/Bln</button>
+      <button type="button" onclick="hubungiViaWhatsApp('pesan2')">Kings 25k/Bln</button>
+      <button type="button" onclick="hubungiViaWhatsApp('pesan3')">Abyas 35k/bln</button>
+      <button type="button" onclick="hubungiViaWhatsApp('pesan4')">Empfire 50k/bln</button>
+    </form>
+  </div>
+
+<div class="contactContainer">
+  <div class="profilePicContainer">
+    <img class="profilePic" src="konrok.jpeg" alt="Foto Profil">
+  </div>
+  <div class="formTitle">COIN</div>
+  <form class="contactForm">
+    <label for="jumlahCoin">isi jumlah ruby 20 = Rp.10k</label>
+    <input type="text" id="jumlahCoin" name="jumlahCoin">
+    <button type="button" onclick="hubungiViaWhatsApp('pesan5')">click to buy</button>
+  </form>
+</div>
+
+<script>
+function hubungiViaWhatsApp(pesan) {
+  var nama = document.getElementById("gemertag").value;
+  var pesanText = '';
+  if(pesan === 'pesan1') {
+    pesanText = 'ranks Forest 10k/Bln';
+  } else if(pesan === 'pesan2') {
+    pesanText = 'ranks kings 25k/Bln';
+  } else if(pesan === 'pesan3') {
+    pesanText = 'ranks abyas 35k/Bln';
+  } else if(pesan === 'pesan4') {
+    pesanText = 'ranks empfire 50k/Bln';
+  } else if(pesan === 'pesan5') {
+    var jumlahCoin = document.getElementById("jumlahCoin").value;
+    pesanText = 'Saya ingin membeli ' + jumlahCoin + ' ruby';
+   }
+    var waLink = "https://wa.me/6285175217652?text=Halo,%20saya%20" + encodeURIComponent(nama) + "%20" + encodeURIComponent(pesanText);
+    window.open(waLink, "_blank");
+  }
+</script>
+
+</body>
+</html>
